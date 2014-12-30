@@ -1,8 +1,8 @@
 {
-    "name": "axstrad/extra-framework-bundle",
-    "description": "Extra framework bundle for Symfony 2 applications",
+    "name": "axstrad/content",
+    "description": "",
     "type": "library",
-    "keywords": ["symfony bundle"],
+    "keywords": ["axstrad", "content"],
     "license": "MIT",
     "authors": [
         {
