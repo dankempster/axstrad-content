@@ -19,6 +19,7 @@ namespace Axstrad\Component\Content\Traits;
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
+ * @since 0.2
  */
 trait Heading
 {
