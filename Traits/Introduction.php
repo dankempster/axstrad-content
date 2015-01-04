@@ -20,6 +20,7 @@ use Axstrad\Component\Content\Exception\InvalidArgumentException;
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
+ * @since 0.2
  */
 trait Introduction
 {
