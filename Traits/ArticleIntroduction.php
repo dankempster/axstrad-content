@@ -14,14 +14,15 @@ namespace Axstrad\Component\Content\Traits;
 
 
 /**
- * Axstrad\Bundle\ContentBundle\Traits\Article
+ * Axstrad\Bundle\ContentBundle\Traits\ArticleIntroduction
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
+ * @since 0.2
  */
-trait Article
+trait ArticleIntroduction
 {
-    use Copy;
+    use CopyIntroduction;
     use Heading;
 }

@@ -10,18 +10,30 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Traits;
+namespace Axstrad\Component\Content;
 
 
 /**
- * Axstrad\Bundle\ContentBundle\Traits\Article
+ * Axstrad\Component\Content\Introduction
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
  */
-trait Article
+interface Introduction
 {
-    use Copy;
-    use Heading;
+    /**
+     * Set Intro
+     *
+     * @param string $intro
+     * @return self
+     */
+    public function setIntro($intro);
+
+    /**
+     * Get Intro
+     *
+     * @return string
+     */
+    public function getIntro();
 }
