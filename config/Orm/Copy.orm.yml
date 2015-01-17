@@ -1,4 +1,4 @@
-Axstrad\Component\Content\Orm\Copy:
+Axstrad\Component\Content\Entity\Copy:
     type: mappedSuperclass
     fields:
         copy:

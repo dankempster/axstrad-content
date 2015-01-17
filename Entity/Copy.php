@@ -10,21 +10,20 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Orm;
+namespace Axstrad\Component\Content\Entity;
 
-use Axstrad\Component\Content\Model\ArticleIntroduction as BaseArticle;
+use Axstrad\Component\Content\Model\Copy as BaseCopy;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Axstrad\Component\Content\Orm\ArticleIntroduction
+ * Axstrad\Component\Content\Entity\Copy
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
  * @subpackage ORM
- * @since 0.2
  */
-abstract class ArticleIntroduction extends BaseArticle
+abstract class Copy extends BaseCopy
 {
     /**
      * @ORM\Column(name="id", type="integer")
@@ -33,6 +32,7 @@ abstract class ArticleIntroduction extends BaseArticle
      * @var integer
      */
     protected $id;
+
 
     /**
      * Get the entity's ID.

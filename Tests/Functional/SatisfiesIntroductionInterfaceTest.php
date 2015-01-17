@@ -37,8 +37,8 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
             [new Model\ArticleIntroduction],
 
             // Doctrine/ORM
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\CopyIntroduction')],
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\ArticleIntroduction')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\CopyIntroduction')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\ArticleIntroduction')],
         );
     }
 
@@ -49,8 +49,8 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
             ['Axstrad\Component\Content\Model\ArticleIntroduction'],
 
             // Doctrine/ORM
-            ['Axstrad\Component\Content\Orm\CopyIntroduction'],
-            ['Axstrad\Component\Content\Orm\ArticleIntroduction'],
+            ['Axstrad\Component\Content\Entity\CopyIntroduction'],
+            ['Axstrad\Component\Content\Entity\ArticleIntroduction'],
         );
     }
 

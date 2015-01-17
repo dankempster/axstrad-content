@@ -47,10 +47,10 @@ class BaseOrmEntityTest extends TestCase
     public function fixtureProvider()
     {
         return array(
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\Copy')],
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\CopyIntroduction')],
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\Article')],
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\ArticleIntroduction')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\Copy')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\CopyIntroduction')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\Article')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\ArticleIntroduction')],
         );
     }
 
@@ -68,8 +68,8 @@ class BaseOrmEntityTest extends TestCase
     public function headingFixtureProvider()
     {
         return array(
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\Article')],
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\ArticleIntroduction')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\Article')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\ArticleIntroduction')],
         );
     }
 
@@ -87,8 +87,8 @@ class BaseOrmEntityTest extends TestCase
     public function introductionFixtureProvider()
     {
         return array(
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\CopyIntroduction')],
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\ArticleIntroduction')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\CopyIntroduction')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\ArticleIntroduction')],
         );
     }
 }

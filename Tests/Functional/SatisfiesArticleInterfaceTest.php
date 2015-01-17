@@ -37,8 +37,8 @@ class SatisfiesArticleInterfaceTest extends SatisfiesCopyInterfaceTest
             [new Model\Article],
 
             // Doctrine/ORM
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\Article')],
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\ArticleIntroduction')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\Article')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\ArticleIntroduction')],
         );
     }
 
@@ -49,8 +49,8 @@ class SatisfiesArticleInterfaceTest extends SatisfiesCopyInterfaceTest
             ['Axstrad\Component\Content\Model\Article'],
 
             // Doctrine/ORM
-            ['Axstrad\Component\Content\Orm\Article'],
-            ['Axstrad\Component\Content\Orm\ArticleIntroduction'],
+            ['Axstrad\Component\Content\Entity\Article'],
+            ['Axstrad\Component\Content\Entity\ArticleIntroduction'],
         );
     }
 

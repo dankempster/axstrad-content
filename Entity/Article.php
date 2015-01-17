@@ -10,13 +10,13 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Orm;
+namespace Axstrad\Component\Content\Entity;
 
 use Axstrad\Component\Content\Model\Article as BaseArticle;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Axstrad\Component\Content\Orm\Article
+ * Axstrad\Component\Content\Entity\Article
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT

@@ -37,8 +37,8 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
             [new Model\Copy],
 
             // Doctrine/ORM
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\Copy')],
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\CopyIntroduction')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\Copy')],
+            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\CopyIntroduction')],
         );
     }
 
@@ -49,8 +49,8 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
             ['Axstrad\Component\Content\Model\Copy'],
 
             // Doctrine/ORM
-            ['Axstrad\Component\Content\Orm\Copy'],
-            ['Axstrad\Component\Content\Orm\CopyIntroduction'],
+            ['Axstrad\Component\Content\Entity\Copy'],
+            ['Axstrad\Component\Content\Entity\CopyIntroduction'],
         );
     }
 

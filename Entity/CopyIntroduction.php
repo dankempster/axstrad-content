@@ -10,21 +10,26 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Orm;
+namespace Axstrad\Component\Content\Entity;
 
-use Axstrad\Component\Content\Model\Copy as BaseCopy;
+use Axstrad\Component\Content\Introduction as IntroductionIntrerface;
+use Axstrad\Component\Content\Traits\CopyIntroduction as CopyIntroTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Axstrad\Component\Content\Orm\Copy
+ * Axstrad\Component\Content\Entity\CopyIntroduction
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
  * @subpackage ORM
+ * @since 0.2
  */
-abstract class Copy extends BaseCopy
+abstract class CopyIntroduction extends Copy implements
+    IntroductionIntrerface
 {
+    use CopyIntroTrait;
+
     /**
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -32,7 +37,6 @@ abstract class Copy extends BaseCopy
      * @var integer
      */
     protected $id;
-
 
     /**
      * Get the entity's ID.
