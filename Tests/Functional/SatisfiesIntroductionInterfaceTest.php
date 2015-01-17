@@ -12,6 +12,8 @@
 
 namespace Axstrad\Component\Content\Tests\Functional;
 
+use Axstrad\Component\Content\Model;
+
 /**
  * Axstrad\Component\Content\Tests\Functional\SatisfiesIntroductionInterfaceTest
  *
@@ -30,6 +32,9 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
             // Traits
             [$this->getMockForTrait('Axstrad\Component\Content\Traits\CopyIntroduction')],
             [$this->getMockForTrait('Axstrad\Component\Content\Traits\ArticleIntroduction')],
+
+            // Model
+            [new Model\ArticleIntroduction],
 
             // Doctrine/ORM
             [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\CopyIntroduction')],
@@ -55,7 +60,12 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
     public function testImplementsIntroductionInterface($fixture)
     {
         return $this->assertTrue(
-            is_a($fixture, 'Axstrad\Component\Content\Introduction', true)
+            is_a($fixture, 'Axstrad\Component\Content\Introduction', true),
+            sprintf(
+                '%s doesn\'t implement the %s interface',
+                $fixture,
+                'Axstrad\Component\Content\Introduction'
+            )
         );
     }
 
