@@ -45,7 +45,7 @@ trait CopyIntroduction
         if ($intro === null && ($copy = $this->getCopy()) !== null) {
             $copy = trim(strip_tags($this->getCopy()));
 
-            if (!empty($copy)) {
+            if ( ! empty($copy)) {
                 $intro = $this->truncateWords($copy, $ellipse);
             }
         }
@@ -54,6 +54,10 @@ trait CopyIntroduction
     }
 
 
+    /**
+     * @param string $copy
+     * @param string $ellipse
+     */
     protected function truncateWords($copy, $ellipse)
     {
         $words = explode(" ", trim($copy), $this->introWordCount + 1);
