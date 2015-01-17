@@ -27,7 +27,7 @@ trait Copy
     /**
      * @var null|string $copy The copy
      */
-    protected $copy;
+    protected $copy = null;
 
 
     /**

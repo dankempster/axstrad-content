@@ -27,7 +27,7 @@ trait Introduction
     /**
      * @var string $introduction
      */
-    protected $introduction;
+    protected $introduction = null;
 
     /**
      * Set introduction

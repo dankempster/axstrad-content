@@ -26,7 +26,7 @@ trait Heading
     /**
      * @var string $heading the content's heading
      */
-    protected $heading;
+    protected $heading = "";
 
     /**
      * Set heading

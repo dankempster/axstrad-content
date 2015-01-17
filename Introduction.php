@@ -25,15 +25,15 @@ interface Introduction
     /**
      * Set Intro
      *
-     * @param string $intro
+     * @param null|string $intro
      * @return self
      */
-    public function setIntro($intro);
+    public function setIntro($intro = null);
 
     /**
      * Get Intro
      *
-     * @return string
+     * @return null|string
      */
     public function getIntro();
 }

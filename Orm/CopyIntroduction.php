@@ -12,6 +12,7 @@
 
 namespace Axstrad\Component\Content\Orm;
 
+use Axstrad\Component\Content\Introduction as IntroductionIntrerface;
 use Axstrad\Component\Content\Traits\CopyIntroduction as CopyIntroTrait;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -24,7 +25,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @subpackage ORM
  * @since 0.2
  */
-abstract class CopyIntroduction
+abstract class CopyIntroduction extends Copy implements
+    IntroductionIntrerface
 {
     use CopyIntroTrait;
 

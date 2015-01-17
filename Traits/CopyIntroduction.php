@@ -42,18 +42,30 @@ trait CopyIntroduction
     {
         $intro = $this->internalGetIntroduction();
 
-        if ($intro === null) {
-            $copy = strip_tags($this->getCopy());
-            $words = explode(" ", trim($copy), $this->introWordCount + 1);
-            if (count($words) > $this->introWordCount) {
-                array_pop($words);
-                $intro = trim(implode(" ", $words)).$ellipse;
-            }
-            else {
-                $intro = $copy;
+        if ($intro === null && ($copy = $this->getCopy()) !== null) {
+            $copy = trim(strip_tags($this->getCopy()));
+
+            if (!empty($copy)) {
+                $intro = $this->truncateWords($copy, $ellipse);
             }
         }
 
         return $intro;
     }
+
+
+    protected function truncateWords($copy, $ellipse)
+    {
+        $words = explode(" ", trim($copy), $this->introWordCount + 1);
+        if (count($words) > $this->introWordCount) {
+            array_pop($words);
+            $intro = trim(implode(" ", $words)).$ellipse;
+        }
+        else {
+            $intro = $copy;
+        }
+
+        return $intro;
+    }
+
 }
