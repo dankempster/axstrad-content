@@ -23,9 +23,13 @@ namespace Axstrad\Component\Content\Tests\Functional;
  */
 class SatisfiesArticleInterfaceTest extends SatisfiesCopyInterfaceTest
 {
-    public function implementInterfaceFixturesProvider()
+    public function fixtureProvider()
     {
         return array(
+
+            // Traits
+            [$this->getMockForTrait('Axstrad\Component\Content\Traits\Article')],
+            [$this->getMockForTrait('Axstrad\Component\Content\Traits\ArticleIntroduction')],
 
             // Doctrine/ORM
             [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\Article')],
@@ -33,29 +37,30 @@ class SatisfiesArticleInterfaceTest extends SatisfiesCopyInterfaceTest
         );
     }
 
-    public function fixtureProvider()
+    public function classNameProvider()
     {
-        return array_merge(
-            array(
+        return array(
+            // Model
+            ['Axstrad\Component\Content\Model\Article'],
 
-                // Traits
-                [$this->getMockForTrait('Axstrad\Component\Content\Traits\Article')],
-                [$this->getMockForTrait('Axstrad\Component\Content\Traits\ArticleIntroduction')],
-            ),
-
-            // Abstract and Concrete implementations
-            $this->implementInterfaceFixturesProvider()
+            // Doctrine/ORM
+            ['Axstrad\Component\Content\Orm\Article'],
+            ['Axstrad\Component\Content\Orm\ArticleIntroduction'],
         );
     }
 
     /**
-     * @dataProvider implementInterfaceFixturesProvider
+     * @dataProvider classNAmeProvider
      */
-    public function testImplementsArticleInterface($fixture)
+    public function testImplementsIntroductionInterface($fixture)
     {
-        return $this->assertInstanceOf(
-            'Axstrad\Component\Content\Article',
-            $fixture
+        return $this->assertTrue(
+            is_a($fixture, 'Axstrad\Component\Content\Article', true),
+            sprintf(
+                '%s doesn\'t implement the %s interface',
+                $fixture,
+                'Axstrad\Component\Content\Article'
+            )
         );
     }
 

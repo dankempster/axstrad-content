@@ -28,12 +28,12 @@ interface Introduction
      * @param null|string $intro
      * @return self
      */
-    public function setIntro($intro = null);
+    public function setIntroduction($intro = null);
 
     /**
      * Get Intro
      *
      * @return null|string
      */
-    public function getIntro();
+    public function getIntroduction();
 }

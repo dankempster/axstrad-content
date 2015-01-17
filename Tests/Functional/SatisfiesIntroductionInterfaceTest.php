@@ -23,9 +23,13 @@ namespace Axstrad\Component\Content\Tests\Functional;
  */
 class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
 {
-    public function implementInterfaceFixturesProvider()
+    public function fixtureProvider()
     {
         return array(
+
+            // Traits
+            [$this->getMockForTrait('Axstrad\Component\Content\Traits\CopyIntroduction')],
+            [$this->getMockForTrait('Axstrad\Component\Content\Traits\ArticleIntroduction')],
 
             // Doctrine/ORM
             [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\CopyIntroduction')],
@@ -33,28 +37,25 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    public function fixtureProvider()
+    public function classNameProvider()
     {
-        return array_merge(
-            array(
-                // Traits
-                [$this->getMockForTrait('Axstrad\Component\Content\Traits\CopyIntroduction')],
-                [$this->getMockForTrait('Axstrad\Component\Content\Traits\ArticleIntroduction')],
-            ),
+        return array(
+            // Model
+            ['Axstrad\Component\Content\Model\ArticleIntroduction'],
 
-            // Abstract and Concrete implementations
-            $this->implementInterfaceFixturesProvider()
+            // Doctrine/ORM
+            ['Axstrad\Component\Content\Orm\CopyIntroduction'],
+            ['Axstrad\Component\Content\Orm\ArticleIntroduction'],
         );
     }
 
     /**
-     * @dataProvider implementInterfaceFixturesProvider
+     * @dataProvider classNAmeProvider
      */
     public function testImplementsIntroductionInterface($fixture)
     {
-        return $this->assertInstanceOf(
-            'Axstrad\Component\Content\Introduction',
-            $fixture
+        return $this->assertTrue(
+            is_a($fixture, 'Axstrad\Component\Content\Introduction', true)
         );
     }
 

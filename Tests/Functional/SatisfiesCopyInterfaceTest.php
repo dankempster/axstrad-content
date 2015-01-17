@@ -25,9 +25,13 @@ use Axstrad\Component\Content\Model;
  */
 class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
 {
-    public function implementInterfaceFixturesProvider()
+    public function fixtureProvider()
     {
         return array(
+
+            // Traits
+            [$this->getMockForTrait('Axstrad\Component\Content\Traits\Copy')],
+            [$this->getMockForTrait('Axstrad\Component\Content\Traits\CopyIntroduction')],
 
             // Doctrine/ORM
             [$this->getMockForAbstractClass('Axstrad\Component\Content\Orm\Copy')],
@@ -35,29 +39,30 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    public function fixtureProvider()
+    public function classNameProvider()
     {
-        return array_merge(
-            array(
+        return array(
+            // Model
+            ['Axstrad\Component\Content\Model\Copy'],
 
-                // Traits
-                [$this->getMockForTrait('Axstrad\Component\Content\Traits\Copy')],
-                [$this->getMockForTrait('Axstrad\Component\Content\Traits\CopyIntroduction')],
-            ),
-
-            // Abstract and Concrete implementations
-            $this->implementInterfaceFixturesProvider()
+            // Doctrine/ORM
+            ['Axstrad\Component\Content\Orm\Copy'],
+            ['Axstrad\Component\Content\Orm\CopyIntroduction'],
         );
     }
 
     /**
-     * @dataProvider implementInterfaceFixturesProvider
+     * @dataProvider classNameProvider
      */
     public function testImplementsCopyInterface($fixture)
     {
-        return $this->assertInstanceOf(
-            'Axstrad\Component\Content\Copy',
-            $fixture
+        return $this->assertTrue(
+            is_a($fixture, 'Axstrad\Component\Content\Copy', true),
+            sprintf(
+                '%s doesn\'t implement the %s interface',
+                $fixture,
+                'Axstrad\Component\Content\Copy'
+            )
         );
     }
 
