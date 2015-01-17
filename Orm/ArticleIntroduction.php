@@ -12,8 +12,7 @@
 
 namespace Axstrad\Component\Content\Orm;
 
-use Axstrad\Component\Content\Introduction as IntroductionIntrerface;
-use Axstrad\Component\Content\Traits\ArticleIntroduction as ArticleIntroTrait;
+use Axstrad\Component\Content\Model\ArticleIntroduction as BaseArticle;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,11 +24,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @subpackage ORM
  * @since 0.2
  */
-abstract class ArticleIntroduction extends Article implements
-    IntroductionIntrerface
+abstract class ArticleIntroduction extends BaseArticle
 {
-    use ArticleIntroTrait;
-
     /**
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id

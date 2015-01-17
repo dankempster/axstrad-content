@@ -12,8 +12,7 @@
 
 namespace Axstrad\Component\Content\Orm;
 
-use Axstrad\Component\Content\Copy as CopyInterface;
-use Axstrad\Component\Content\Traits\Copy as CopyTrait;
+use Axstrad\Component\Content\Model\Copy as BaseCopy;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,12 +23,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @package Axstrad/Content
  * @subpackage ORM
  */
-abstract class Copy implements
-    CopyInterface
+abstract class Copy extends BaseCopy
 {
-    use CopyTrait;
-
-
     /**
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id

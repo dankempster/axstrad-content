@@ -12,8 +12,7 @@
 
 namespace Axstrad\Component\Content\Orm;
 
-use Axstrad\Component\Content\Article as ArticleInterface;
-use Axstrad\Component\Content\Traits\Article as ArticleTrait;
+use Axstrad\Component\Content\Model\Article as BaseArticle;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,12 +23,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @package Axstrad/Content
  * @subpackage ORM
  */
-abstract class Article implements
-    ArticleInterface
+abstract class Article extends BaseArticle
 {
-    use ArticleTrait;
-
-
     /**
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
