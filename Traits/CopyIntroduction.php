@@ -14,7 +14,7 @@ namespace Axstrad\Component\Content\Traits;
 
 
 /**
- * Axstrad\Bundle\ContentBundle\Traits\Article
+ * Axstrad\Bundle\ContentBundle\Traits\CopyIntroduction
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
