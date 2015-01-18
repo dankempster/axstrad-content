@@ -31,7 +31,7 @@ __namespace:__ Axstrad\Component\Content;
 
 # Symfony Framework Usage
 Add the mapping info to the DoctrineBundle
-```
+```yaml
 # ./app/config/config.yml
 
 # Doctrine Configuration
