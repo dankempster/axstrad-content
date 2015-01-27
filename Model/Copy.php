@@ -11,28 +11,21 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Traits;
+namespace Axstrad\Component\Content\Model;
 
-use Axstrad\Component\Content\Exception\InvalidArgumentException;
-use Doctrine\ORM\Mapping as ORM;
+use Axstrad\Component\Content\Copy as CopyInterface;
+use Axstrad\Component\Content\Traits;
 
 /**
- * Axstrad\Component\Content\Traits\Copy
- *
- * Use requirements:
- *   - Doctrine\ORM\Mapping as ORM
+ * Axstrad\Bundle\ContentBundle\Model\Copy
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
+ * @since 0.3
  */
-trait Copy
+class Copy implements
+    CopyInterface
 {
-    use CopyMethods;
-
-    /**
-     * @ORM\Column(type="string", nullable=true)
-     * @var null|string $copy The copy
-     */
-    protected $copy = null;
+    use Traits\Copy;
 }

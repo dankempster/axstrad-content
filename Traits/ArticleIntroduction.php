@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Axstrad library.
  *
@@ -15,6 +16,9 @@ namespace Axstrad\Component\Content\Traits;
 
 /**
  * Axstrad\Bundle\ContentBundle\Traits\ArticleIntroduction
+ *
+ * Use requirements:
+ *   - Doctrine\ORM\Mapping as ORM
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT

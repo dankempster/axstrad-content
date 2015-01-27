@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Axstrad library.
  *
@@ -12,10 +13,13 @@
 
 namespace Axstrad\Component\Content\Traits;
 
-use Axstrad\Component\Content\Exception\InvalidArgumentException;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Axstrad\Bundle\ContentBundle\Traits\Introduction
+ *
+ * Use requirements:
+ *   - Doctrine\ORM\Mapping as ORM
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
@@ -24,41 +28,11 @@ use Axstrad\Component\Content\Exception\InvalidArgumentException;
  */
 trait Introduction
 {
-    /**
-     * @var string $introduction
-     */
-    protected $introduction;
+    use IntroductionMethods;
 
     /**
-     * Set introduction
-     *
-     * @param null|string $introduction
-     * @return self
+     * @ORM\Column(type="text", nullable=true)
+     * @var null|string $introduction
      */
-    public function setIntroduction($introduction = null)
-    {
-        if ($introduction === null) {
-            $this->introduction = null;
-        }
-        elseif (!is_scalar($introduction)) {
-            throw InvalidArgumentException::create(
-                'scalar',
-                $introduction
-            );
-        }
-        else {
-            $this->introduction = (string) $introduction;
-        }
-        return $this;
-    }
-
-    /**
-     * Get introduction
-     *
-     * @return null|string
-     */
-    public function getIntroduction()
-    {
-        return $this->introduction;
-    }
+    protected $introduction = null;
 }

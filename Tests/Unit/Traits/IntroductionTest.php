@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Axstrad library.
  *
@@ -34,7 +35,7 @@ class IntroductionTest extends TestCase
      */
     public function testIntroductionIsNullToStart()
     {
-        $this->assertAttributeEquals(
+        $this->assertAttributeSame(
             null,
             'introduction',
             $this->fixture

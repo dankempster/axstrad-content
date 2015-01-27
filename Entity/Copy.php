@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Axstrad library.
  *
@@ -10,24 +11,22 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Orm;
+namespace Axstrad\Component\Content\Entity;
 
-use Axstrad\Component\Content\Traits\Copy as CopyTrait;
+use Axstrad\Component\Content\Model\Copy as BaseCopy;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Axstrad\Component\Content\Orm\Copy
+ * Axstrad\Component\Content\Entity\Copy
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
  * @subpackage ORM
+ * @since 0.3
  */
-abstract class Copy
+abstract class Copy extends BaseCopy
 {
-    use CopyTrait;
-
-
     /**
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id

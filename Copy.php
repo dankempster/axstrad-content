@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Axstrad library.
  *
@@ -25,7 +26,7 @@ interface Copy
     /**
      * Set Copy
      *
-     * @param string $copy
+     * @param null|string $copy
      * @return self
      */
     public function setCopy($copy = null);
@@ -33,7 +34,7 @@ interface Copy
     /**
      * Get Copy
      *
-     * @return string
+     * @return null|string
      */
     public function getCopy();
 }

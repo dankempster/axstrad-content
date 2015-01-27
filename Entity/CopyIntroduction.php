@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Axstrad library.
  *
@@ -10,23 +11,25 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Orm;
+namespace Axstrad\Component\Content\Entity;
 
-use Axstrad\Component\Content\Traits\Article as ArticleTrait;
+use Axstrad\Component\Content\Introduction as IntroductionIntrerface;
+use Axstrad\Component\Content\Traits\CopyIntroduction as CopyIntroTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Axstrad\Component\Content\Orm\Article
+ * Axstrad\Component\Content\Entity\CopyIntroduction
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
  * @subpackage ORM
+ * @since 0.3
  */
-abstract class Article
+abstract class CopyIntroduction extends Copy implements
+    IntroductionIntrerface
 {
-    use ArticleTrait;
-
+    use CopyIntroTrait;
 
     /**
      * @ORM\Column(name="id", type="integer")
@@ -35,7 +38,6 @@ abstract class Article
      * @var integer
      */
     protected $id;
-
 
     /**
      * Get the entity's ID.

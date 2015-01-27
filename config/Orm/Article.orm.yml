@@ -1,4 +1,4 @@
-Axstrad\Component\Content\Orm\Article:
+Axstrad\Component\Content\Entity\Article:
     type: mappedSuperclass
     fields:
         heading:

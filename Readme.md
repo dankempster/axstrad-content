@@ -25,7 +25,7 @@ __namespace:__ Axstrad\Component\Content;
 ```
 "require": {
     ...
-    "axstrad/content": "0.2.*"
+    "axstrad/content": "0.3.*"
 }
 ```
 
@@ -42,7 +42,7 @@ doctrine:
         mappings:
             axstrad_content:
                 type: yml
-                prefix: Axstrad\Component\Content\Orm
+                prefix: Axstrad\Component\Content\Entity
                 dir: "%kernel.root_dir%/../vendor/axstrad/content/config/Orm"
                 alias: AxstradContent
                 is_bundle: false

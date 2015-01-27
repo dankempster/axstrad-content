@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Axstrad library.
  *
@@ -12,9 +13,13 @@
 
 namespace Axstrad\Component\Content\Traits;
 
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Axstrad\Bundle\ContentBundle\Traits\Article
+ * Axstrad\Bundle\ContentBundle\Traits\CopyIntroduction
+ *
+ * Use requirements:
+ *   - Doctrine\ORM\Mapping as ORM
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
@@ -24,36 +29,16 @@ namespace Axstrad\Component\Content\Traits;
 trait CopyIntroduction
 {
     use Copy;
-    use Introduction {
-        Introduction::getIntroduction as protected internalGetIntroduction;
+    use Introduction;
+    use CopyIntroductionMethods {
+        CopyIntroductionMethods::getIntroduction insteadof Introduction;
+        CopyIntroductionMethods::setIntroduction insteadof Introduction;
     }
 
     /**
-     * @var integer
+     * @var integer $copyIntroWordCount When an introduction is not set, this is
+     *      the number of words to trim {@see getCopy copy} to, to create the
+     *      introduction.
      */
-    protected $introWordCount = 30;
-
-    /**
-     * Get introduction
-     *
-     * @return string
-     */
-    public function getIntroduction($ellipse = "...")
-    {
-        $intro = $this->internalGetIntroduction();
-
-        if ($intro === null) {
-            $copy = strip_tags($this->getCopy());
-            $words = explode(" ", trim($copy), $this->introWordCount + 1);
-            if (count($words) > $this->introWordCount) {
-                array_pop($words);
-                $intro = trim(implode(" ", $words)).$ellipse;
-            }
-            else {
-                $intro = $copy;
-            }
-        }
-
-        return $intro;
-    }
+    protected $copyIntroWordCount = 30;
 }

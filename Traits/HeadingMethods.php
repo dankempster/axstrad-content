@@ -13,26 +13,38 @@
 
 namespace Axstrad\Component\Content\Traits;
 
-use Axstrad\Component\Content\Exception\InvalidArgumentException;
-use Doctrine\ORM\Mapping as ORM;
-
 /**
- * Axstrad\Component\Content\Traits\Copy
+ * Axstrad\Bundle\ContentBundle\Traits\HeadingMethods
  *
- * Use requirements:
- *   - Doctrine\ORM\Mapping as ORM
+ * Property requirements
+ *   - $heading = ""
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
+ * @since 0.3
  */
-trait Copy
+trait HeadingMethods
 {
-    use CopyMethods;
+    /**
+     * Set heading
+     *
+     * @param string $heading
+     * @return self
+     */
+    public function setHeading($heading)
+    {
+        $this->heading = (string) $heading;
+        return $this;
+    }
 
     /**
-     * @ORM\Column(type="string", nullable=true)
-     * @var null|string $copy The copy
+     * Get heading
+     *
+     * @return string
      */
-    protected $copy = null;
+    public function getHeading()
+    {
+        return $this->heading;
+    }
 }
