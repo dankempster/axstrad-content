@@ -10,10 +10,10 @@
 
     <testsuites>
         <testsuite name="Axstrad/Content">
-            <file>Tests/Unit/Traits/CopyTest.php</file>
-            <file>Tests/Unit/Traits/ArticleTest.php</file>
+            <file>tests/Unit/Traits/CopyTest.php</file>
+            <file>tests/Unit/Traits/ArticleTest.php</file>
 
-            <directory suffix="Test.php">Tests/</directory>
+            <directory suffix="Test.php">tests/</directory>
         </testsuite>
     </testsuites>
 
@@ -36,7 +36,7 @@
             <directory suffix=".php">.</directory>
             <exclude>
                 <directory>./vendor</directory>
-                <directory>./Tests</directory>
+                <directory>./tests</directory>
             </exclude>
         </whitelist>
     </filter>

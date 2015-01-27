@@ -27,7 +27,8 @@
 
     "autoload": {
         "psr-4": {
-            "Axstrad\\Component\\Content\\": ""
+            "Axstrad\\Component\\Content\\Tests\\": "tests/",
+            "Axstrad\\Component\\Content\\": "src/"
         }
     },
 
@@ -40,6 +41,17 @@
     },
 
     "archive": {
-        "exclude": ["!vendor", "Tests", "phpunit.xml*", ".gitignore", ".travis.yml"]
+        "exclude": [
+            "!vendor",
+            ".coveralls.yml",
+            ".formatter.yml",
+            ".gitignore",
+            ".travis.yml",
+            "behat.yml",
+            "build",
+            "phpspec.yml.*",
+            "phpunit.xml*",
+            "tests"
+        ]
     }
 }
