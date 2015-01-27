@@ -16,6 +16,9 @@ namespace Axstrad\Component\Content\Traits;
 /**
  * Axstrad\Bundle\ContentBundle\Traits\Article
  *
+ * Use requirements:
+ *   - Doctrine\ORM\Mapping as ORM
+ *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
