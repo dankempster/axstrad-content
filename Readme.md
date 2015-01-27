@@ -25,7 +25,7 @@ __namespace:__ Axstrad\Component\Content;
 ```
 "require": {
     ...
-    "axstrad/content": "0.3.*"
+    "axstrad/content": "0.4.*@dev"
 }
 ```
 
