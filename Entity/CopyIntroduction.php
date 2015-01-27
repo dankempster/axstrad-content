@@ -23,7 +23,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @license MIT
  * @package Axstrad/Content
  * @subpackage ORM
- * @since 0.2
+ * @since 0.3
  */
 abstract class CopyIntroduction extends Copy implements
     IntroductionIntrerface
