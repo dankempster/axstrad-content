@@ -11,12 +11,13 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Tests\Unit\Traits;
+namespace Axstrad\Component\Content\Tests\Unit\Model;
 
+use Axstrad\Component\Content\Model\CopyIntroduction;
 use Axstrad\Component\Test\TestCase;
 
 /**
- * Axstrad\Component\Content\Tests\Unit\Traits\CopyIntroductionTest
+ * Axstrad\Component\Content\Tests\Unit\Model\CopyIntroductionTest
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
@@ -28,7 +29,7 @@ class CopyIntroductionTest extends TestCase
 {
     public function setUp()
     {
-        $this->fixture = $this->getMockForTrait('Axstrad\Component\Content\Traits\CopyIntroduction');
+        $this->fixture = new CopyIntroduction;
     }
 
     public function testCopyIsUsedWhenIntroIsNotSet()

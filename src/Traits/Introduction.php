@@ -13,26 +13,51 @@
 
 namespace Axstrad\Component\Content\Traits;
 
-use Doctrine\ORM\Mapping as ORM;
+use Axstrad\Component\Content\Exception\InvalidArgumentException;
 
 /**
  * Axstrad\Bundle\ContentBundle\Traits\Introduction
  *
- * Use requirements:
- *   - Doctrine\ORM\Mapping as ORM
+ * Property requirements
+ *   - $introduction = null
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
- * @since 0.2
+ * @since 0.3
  */
 trait Introduction
 {
-    use IntroductionMethods;
+    /**
+     * Set introduction
+     *
+     * @param null|string $introduction
+     * @return self
+     */
+    public function setIntroduction($introduction = null)
+    {
+        if ($introduction === null) {
+            $this->introduction = null;
+        }
+        elseif (!is_scalar($introduction)) {
+            throw InvalidArgumentException::create(
+                'null or string',
+                $introduction
+            );
+        }
+        else {
+            $this->introduction = (string) $introduction;
+        }
+        return $this;
+    }
 
     /**
-     * @ORM\Column(type="text", nullable=true)
-     * @var null|string $introduction
+     * Get introduction
+     *
+     * @return null|string
      */
-    protected $introduction = null;
+    public function getIntroduction()
+    {
+        return $this->introduction;
+    }
 }

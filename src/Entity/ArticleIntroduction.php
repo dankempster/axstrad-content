@@ -25,23 +25,10 @@ use Doctrine\ORM\Mapping as ORM;
  * @subpackage ORM
  * @since 0.3
  */
-abstract class ArticleIntroduction extends BaseArticle
+class ArticleIntroduction extends BaseArticle
 {
-    /**
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     * @var integer
-     */
-    protected $id;
-
-    /**
-     * Get the entity's ID.
-     *
-     * @return integer Returns the entity's ID.
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+    use Traits\EntityTrait;
+    use Traits\CopyTrait;
+    use Traits\HeadingTrait;
+    use Traits\IntroductionTrait;
 }

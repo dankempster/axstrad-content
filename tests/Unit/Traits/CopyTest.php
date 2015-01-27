@@ -13,6 +13,7 @@
 
 namespace Axstrad\Component\Content\Tests\Unit\Traits;
 
+use Axstrad\Component\Content\Tests\Stubs\Traits\CopyTraitStub;
 use Axstrad\Component\Test\TestCase;
 
 /**
@@ -28,23 +29,11 @@ class CopyTest extends TestCase
 {
     public function setUp()
     {
-        $this->fixture = $this->getMockForTrait('Axstrad\Component\Content\Traits\Copy');
-    }
-
-    /**
-     */
-    public function testCopyIsNullToStart()
-    {
-        $this->assertAttributeEquals(
-            null,
-            'copy',
-            $this->fixture
-        );
+        $this->fixture = new CopyTraitStub;
     }
 
     /**
      * @covers Axstrad\Component\Content\Traits\Copy::getCopy
-     * @depends testCopyIsNullToStart
      */
     public function testGetCopyMethod1()
     {

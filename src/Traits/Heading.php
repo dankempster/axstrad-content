@@ -13,26 +13,38 @@
 
 namespace Axstrad\Component\Content\Traits;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Axstrad\Bundle\ContentBundle\Traits\Heading
  *
- * Use requirements:
- *   - Doctrine\ORM\Mapping as ORM
+ * Property requirements
+ *   - $heading = ""
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
- * @since 0.2
+ * @since 0.3
  */
 trait Heading
 {
-    use HeadingMethods;
+    /**
+     * Set heading
+     *
+     * @param string $heading
+     * @return self
+     */
+    public function setHeading($heading)
+    {
+        $this->heading = (string) $heading;
+        return $this;
+    }
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @var string $heading the content's heading
+     * Get heading
+     *
+     * @return string
      */
-    protected $heading = "";
+    public function getHeading()
+    {
+        return $this->heading;
+    }
 }

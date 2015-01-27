@@ -11,21 +11,16 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Traits;
+namespace Axstrad\Component\Content\Tests\Stubs\Traits;
 
+use Axstrad\Component\Content\Traits;
 
 /**
- * Axstrad\Bundle\ContentBundle\Traits\Article
- *
- * Use requirements:
- *   - Doctrine\ORM\Mapping as ORM
- *
- * @author Dan Kempster <dev@dankempster.co.uk>
- * @license MIT
- * @package Axstrad/Content
+ * Axstrad\Component\Content\Tests\Stubs\Traits\IntroductionTraitStub
  */
-trait Article
+class IntroductionTraitStub
 {
-    use Copy;
-    use Heading;
+    use Traits\Introduction;
+
+    protected $introduction = null;
 }

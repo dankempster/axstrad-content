@@ -13,6 +13,7 @@
 
 namespace Axstrad\Component\Content\Tests\Functional;
 
+use Axstrad\Component\Content\Entity;
 use Axstrad\Component\Content\Model;
 
 /**
@@ -30,16 +31,13 @@ class SatisfiesArticleInterfaceTest extends SatisfiesCopyInterfaceTest
     {
         return array(
 
-            // Traits
-            [$this->getMockForTrait('Axstrad\Component\Content\Traits\Article')],
-            [$this->getMockForTrait('Axstrad\Component\Content\Traits\ArticleIntroduction')],
-
             // Model
             [new Model\Article],
+            [new Model\ArticleIntroduction],
 
             // Doctrine/ORM
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\Article')],
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\ArticleIntroduction')],
+            [new Entity\Article],
+            [new Entity\ArticleIntroduction],
         );
     }
 

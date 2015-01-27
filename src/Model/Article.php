@@ -28,4 +28,11 @@ class Article extends Copy implements
     ArticleInterface
 {
     use Traits\Heading;
+
+    /**
+     * Required by Traits\Heading
+     *
+     * @var string The article's heading
+     */
+    protected $heading = "";
 }

@@ -14,25 +14,50 @@
 namespace Axstrad\Component\Content\Traits;
 
 use Axstrad\Component\Content\Exception\InvalidArgumentException;
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Axstrad\Component\Content\Traits\Copy
  *
- * Use requirements:
- *   - Doctrine\ORM\Mapping as ORM
+ * Property requirements
+ *   - $copy = null
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
+ * @since 0.3
  */
 trait Copy
 {
-    use CopyMethods;
+    /**
+     * Set Copy
+     *
+     * @param string $copy
+     * @return self
+     */
+    public function setCopy($copy = null)
+    {
+        if (is_null($copy)) {
+            $this->copy = null;
+        }
+        elseif (!is_scalar($copy)) {
+            throw InvalidArgumentException::create(
+                'string (or scalar)',
+                $copy
+            );
+        }
+        else {
+            $this->copy = (string) $copy;
+        }
+        return $this;
+    }
 
     /**
-     * @ORM\Column(type="string", nullable=true)
-     * @var null|string $copy The copy
+     * Get copy
+     *
+     * @return string
      */
-    protected $copy = null;
+    public function getCopy()
+    {
+        return $this->copy;
+    }
 }

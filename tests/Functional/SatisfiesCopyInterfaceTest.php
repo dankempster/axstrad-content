@@ -13,6 +13,7 @@
 
 namespace Axstrad\Component\Content\Tests\Functional;
 
+use Axstrad\Component\Content\Entity;
 use Axstrad\Component\Content\Model;
 
 /**
@@ -30,16 +31,15 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
     {
         return array(
 
-            // Traits
-            [$this->getMockForTrait('Axstrad\Component\Content\Traits\Copy')],
-            [$this->getMockForTrait('Axstrad\Component\Content\Traits\CopyIntroduction')],
-
             // Model
+            [new Model\Article],
+            [new Model\ArticleIntroduction],
             [new Model\Copy],
+            [new Model\CopyIntroduction],
 
             // Doctrine/ORM
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\Copy')],
-            [$this->getMockForAbstractClass('Axstrad\Component\Content\Entity\CopyIntroduction')],
+            [new Entity\Copy],
+            [new Entity\CopyIntroduction],
         );
     }
 

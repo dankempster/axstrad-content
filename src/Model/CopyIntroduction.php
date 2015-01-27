@@ -11,36 +11,49 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Traits;
+namespace Axstrad\Component\Content\Model;
 
+use Axstrad\Component\Content\Introduction as IntroductionInterface;
+use Axstrad\Component\Content\Traits;
 
 /**
- * Axstrad\Bundle\ContentBundle\Traits\CopyIntroductionMethods
- *
- * Property requirements
- *   - $copy = null
- *   - $introduction = null
- *   - $copyIntroWordCount = <integer>
+ * Axstrad\Bundle\ContentBundle\Model\Copy
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Content
- * @since 0.3
+ * @since 0.4
  */
-trait CopyIntroductionMethods
+class CopyIntroduction extends Copy implements
+    IntroductionInterface
 {
-    use IntroductionMethods {
-        IntroductionMethods::getIntroduction as private internalGetIntroduction;
+    use Traits\Introduction {
+        Traits\Introduction::getIntroduction as private internalGetIntroduction;
     }
 
     /**
-     * @return null|string The copy to trim down if an article isn't set
+     * Require by Traits\Introduction
+     *
+     * @var null|string The article instroduction
      */
-    public abstract function getCopy();
+    protected $introduction = null;
 
     /**
-     * Get introduction
+     * Require by Traits\Introduction
      *
+     * @var integer $copyIntroWordCount When an introduction is not set, this is
+     *      the number of words to trim {@see getCopy copy} to, to create the
+     *      introduction.
+     */
+    protected $copyIntroWordCount = 30;
+
+    /**
+     * Get introduction.
+     *
+     * If an introduction hasn't been set, the first {@see $copyIntroWordCount
+     * X words} from the {@see getCopy copy} are returned.
+     *
+     * @param string $ellipse
      * @return string
      */
     public function getIntroduction($ellipse = "...")
@@ -76,5 +89,4 @@ trait CopyIntroductionMethods
 
         return $intro;
     }
-
 }

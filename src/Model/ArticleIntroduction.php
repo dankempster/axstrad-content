@@ -13,7 +13,7 @@
 
 namespace Axstrad\Component\Content\Model;
 
-use Axstrad\Component\Content\Introduction as IntroductionInterface;
+use Axstrad\Component\Content\Article as ArticleInterface;
 use Axstrad\Component\Content\Traits;
 
 /**
@@ -24,8 +24,15 @@ use Axstrad\Component\Content\Traits;
  * @package Axstrad/Content
  * @since 0.3
  */
-class ArticleIntroduction extends Article implements
-    IntroductionInterface
+class ArticleIntroduction extends CopyIntroduction implements
+    ArticleInterface
 {
-    use Traits\ArticleIntroduction;
+    use Traits\Heading;
+
+    /**
+     * Required by Traits\Heading
+     *
+     * @var string The article's heading
+     */
+    protected $heading = "";
 }

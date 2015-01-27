@@ -11,12 +11,13 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Tests\Unit\Traits;
+namespace Axstrad\Component\Content\Tests\Unit\Model;
 
+use Axstrad\Component\Content\Model\Article;
 use Axstrad\Component\Test\TestCase;
 
 /**
- * Axstrad\Component\Content\Tests\Unit\Traits\ArticleTest
+ * Axstrad\Component\Content\Tests\Unit\Model\ArticleTest
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
@@ -28,11 +29,22 @@ class ArticleTest extends TestCase
 {
     public function setUp()
     {
-        $this->fixture = $this->getMockForTrait('Axstrad\Component\Content\Traits\Article');
+        $this->fixture = new Article;
     }
 
     /**
-     * @covers Axstrad\Component\Content\Traits\Article::setHeading
+     */
+    public function testCopyIsNullToStart()
+    {
+        $this->assertAttributeEquals(
+            null,
+            'copy',
+            $this->fixture
+        );
+    }
+
+    /**
+     * @covers Axstrad\Component\Content\Model\Article::setHeading
      */
     public function testCanSetHeading()
     {
@@ -45,7 +57,7 @@ class ArticleTest extends TestCase
     }
 
     /**
-     * @covers Axstrad\Component\Content\Traits\Article::setHeading
+     * @covers Axstrad\Component\Content\Model\Article::setHeading
      */
     public function testSetHeadingReturnsSelf()
     {
@@ -56,9 +68,9 @@ class ArticleTest extends TestCase
     }
 
     /**
-     * @covers Axstrad\Component\Content\Traits\Article::getHeading
+     * @covers Axstrad\Component\Content\Model\Article::getHeading
      * @depends testCanSetHeading
-     * @uses Axstrad\Component\Content\Traits\Article::setHeading
+     * @uses Axstrad\Component\Content\Model\Article::setHeading
      */
     public function testGetHeadingMethod()
     {

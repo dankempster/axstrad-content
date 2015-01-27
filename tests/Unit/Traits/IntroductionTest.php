@@ -13,6 +13,7 @@
 
 namespace Axstrad\Component\Content\Tests\Unit\Traits;
 
+use Axstrad\Component\Content\Tests\Stubs\Traits\IntroductionTraitStub;
 use Axstrad\Component\Test\TestCase;
 
 /**
@@ -28,23 +29,11 @@ class IntroductionTest extends TestCase
 {
     public function setUp()
     {
-        $this->fixture = $this->getMockForTrait('Axstrad\Component\Content\Traits\Introduction');
-    }
-
-    /**
-     */
-    public function testIntroductionIsNullToStart()
-    {
-        $this->assertAttributeSame(
-            null,
-            'introduction',
-            $this->fixture
-        );
+        $this->fixture = new IntroductionTraitStub;
     }
 
     /**
      * @covers Axstrad\Component\Content\Traits\Introduction::getIntroduction
-     * @depends testIntroductionIsNullToStart
      */
     public function testGetIntroductionMethod1()
     {

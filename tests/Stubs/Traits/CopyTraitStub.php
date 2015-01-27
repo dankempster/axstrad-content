@@ -11,28 +11,16 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Model;
+namespace Axstrad\Component\Content\Tests\Stubs\Traits;
 
-use Axstrad\Component\Content\Copy as CopyInterface;
 use Axstrad\Component\Content\Traits;
 
 /**
- * Axstrad\Bundle\ContentBundle\Model\Copy
- *
- * @author Dan Kempster <dev@dankempster.co.uk>
- * @license MIT
- * @package Axstrad/Content
- * @since 0.3
+ * Axstrad\Component\Content\Tests\Stubs\Traits\CopyTraitStub
  */
-class Copy implements
-    CopyInterface
+class CopyTraitStub
 {
     use Traits\Copy;
 
-    /**
-     * Required by Traits\Copy
-     *
-     * @var null|string The copy
-     */
     protected $copy = null;
 }
