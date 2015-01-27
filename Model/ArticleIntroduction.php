@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Axstrad library.
  *
@@ -12,8 +13,8 @@
 
 namespace Axstrad\Component\Content\Model;
 
-use Axstrad\Component\Content\Traits;
 use Axstrad\Component\Content\Introduction as IntroductionInterface;
+use Axstrad\Component\Content\Traits;
 
 /**
  * Axstrad\Bundle\ContentBundle\Model\ArticleIntroduction

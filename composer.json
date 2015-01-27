@@ -21,7 +21,8 @@
     "require-dev": {
         "axstrad/test": "~0.1.0",
         "phpunit/phpunit": "~4.1",
-        "satooshi/php-coveralls": "dev-master"
+        "satooshi/php-coveralls": "dev-master",
+        "mmoreram/php-formatter": "~1.0@dev"
     },
 
     "autoload": {
@@ -34,8 +35,7 @@
 
     "extra": {
         "branch-alias": {
-            "dev-develop": "0.3.x-dev",
-            "dev-master": "0.2.x-dev"
+            "dev-develop": "0.4.x-dev"
         }
     },
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Axstrad library.
  *
@@ -11,7 +12,6 @@
  */
 
 namespace Axstrad\Component\Content\Traits;
-
 
 use Axstrad\Component\Content\Exception\InvalidArgumentException;
 use Doctrine\ORM\Mapping as ORM;
