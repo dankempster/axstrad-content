@@ -29,7 +29,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Article implements
     ArticleInterface
 {
-    use EntityTrait;
     use CopyTrait;
     use HeadingTrait;
 }
