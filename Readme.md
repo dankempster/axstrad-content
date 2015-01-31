@@ -16,7 +16,7 @@ __namespace:__ Axstrad\Component\Content;
  - Various content related models & traits
     - Copy
     - Article
- - Provides ORM mapping in YAML format config/orm
+ - Provides ORM mapping using annotations on Entity/Traits 
 
 
 # Installation
@@ -27,23 +27,4 @@ __namespace:__ Axstrad\Component\Content;
     ...
     "axstrad/content": "0.4.*@dev"
 }
-```
-
-# Symfony Framework Usage
-Add the mapping info to the DoctrineBundle
-```yaml
-# ./app/config/config.yml
-
-# Doctrine Configuration
-doctrine:
-    # ...other doctrine config...
-    orm:
-        # ...other orm config...
-        mappings:
-            axstrad_content:
-                type: yml
-                prefix: Axstrad\Component\Content\Entity
-                dir: "%kernel.root_dir%/../vendor/axstrad/content/config/orm"
-                alias: AxstradContent
-                is_bundle: false
 ```
