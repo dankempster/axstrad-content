@@ -1,5 +1,5 @@
 <project name="Axstrad/Content" default="all" basedir=".">
-    <property file="./build.properties"/>
+    <property file="build/resources/build.properties"/>
 
     <target name="prepare" depends="clean">
         <mkdir dir="${build.tmp}"/>
