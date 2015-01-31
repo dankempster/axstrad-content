@@ -13,8 +13,8 @@
 
 namespace Axstrad\Component\Content\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Axstrad\Component\Content\Article as ArticleInterface;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Axstrad\Component\Content\Entity\Article
