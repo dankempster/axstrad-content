@@ -3,9 +3,13 @@ phpunit.xml
 composer.lock
 
 # Build Artifacts
+phpunit.xml
+phpunit.phing.xml
 cache.properties
 build/
-!build/php*.xml
+!build/resources/*.xslt
+
+bin
 
 .idea/workspace.xml
 .idea/dataSources.xml

@@ -1,0 +1,156 @@
+<project name="Axstrad/Content" default="all" basedir=".">
+    <property file="./build.properties"/>
+
+    <target name="prepare" depends="clean">
+        <mkdir dir="${build.tmp}"/>
+        <mkdir dir="${build.log}"/>
+        <mkdir dir="${build.cache}"/> <!-- Should NOT be part of 'clean' target -->
+        <mkdir dir="${build.html}"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.tmp}"/>
+        <delete dir="${build.log}"/>
+        <delete dir="${build.html}"/>
+    </target>
+
+    <target name="phpdepend-human"
+            description="Calculate software metrics using PHP_Depend and log result in XML format."
+            >
+        <mkdir dir="${build.html}"/>
+        <exec
+                command="${exec.phpdepend} --jdepend-chart=${build.html}/pdepend.svg --ignore=${phpdepend.ignore} --overview-pyramid=${build.html}/pyramid.svg ${project.src}"
+                dir="${project.src}"
+                passthru="true"
+                />
+    </target>
+
+    <target name="phpdepend-ci"
+            depends="phpdepend-human"
+            description="Calculate software metrics using PHP_Depend and log result in XML format. Intended for usage within a continuous integration environment."
+            >
+        <exec
+                command="${exec.phpdepend} --jdepend-xml=${phpdepend.xml.file} --ignore=${phpdepend.ignore} ${project.src}"
+                dir="${project.src}"
+                passthru="true"
+                />
+    </target>
+
+    <target name="phpcs">
+        <mkdir dir="${phpcs.html}"/>
+        <exec
+                command="${exec.phpcs} --report=checkstyle --report-file=${phpcs.xml.file} --standard=PEAR --extensions=php --ignore=.git/,doc/,resources/,build ${project.src}"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+    </target>
+
+    <target name="phpunit"
+            description="Runs the project's PHPUnit tests. Intended for use in a Continuous Integration environment."
+            >
+        <mkdir dir="${phpunit.html}"/>
+        <xslt
+                file="${phpunit.config}"
+                tofile="${phpunit.phing.config}"
+                style="${build.resources}/phpunit-phing.xslt"
+                />
+        <exec
+                command="${exec.phpunit} -c ${phpunit.phing.config}"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+    </target>
+
+    <target name="phpmd"
+            description="Intended for use by the command line before committing."
+            >
+        <exec
+                command="${exec.phpmd} ${project.src} text ${phpmd.config}"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+    </target>
+
+    <target name="phpmd-report"
+            description="Runs PHPMD against the project and outputs HTML and XML reports. Intended for internal use."
+            depends="phpmd-html,phpmd-xml"
+            />
+
+    <target name="phpmd-html"
+            >
+        <exec
+                command="${exec.phpmd} ${project.src} html ${phpmd.config} --reportfile ${phpmd.report.html} --suffixes=php"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+    </target>
+
+    <target name="phpmd-xml"
+            description="Runs PHPMD against the project and outputs HTML and XML reports. Intended for by a Continuous Integration environment."
+            >
+        <exec
+                command="${exec.phpmd} ${project.src} xml ${phpmd.config} --reportfile ${phpmd.report.xml} --suffixes=php"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+    </target>
+
+    <target name="phpcpd"
+            description="Find duplicate code using PHPCPD and print human readable output. Intended for usage on the command line before committing."
+            >
+        <exec
+                command="${exec.phpcpd} --verbose ${project.src}"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+    </target>
+
+    <target name="phpcpd-ci"
+            description="Find duplicate code using PHPCPD and log result in XML format. Intended for usage within a continuous integration environment."
+            >
+        <exec
+                command="${exec.phpcpd} --log-pmd ${phpcpd.log.file} --verbose ${project.src}"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+    </target>
+
+    <target name="phploc"
+            description="Measure project size using PHPLOC and print human readable output. Intended for usage from the command line before committing."
+            >
+        <exec
+                command="${exec.phploc} ${project.src} ${project.tests}"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+    </target>
+
+    <target name="phploc-ci"
+            description="Measure project size using PHPLOC and log result in CSV and XML format. Intended for usage within a continuous integration environment."
+            >
+        <exec
+                command="${exec.phploc} --count-tests --log-xml ${phploc.log.file} ${project.src} ${project.tests}  > ${build.html}/phploc.txt"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+    </target>
+
+    <target name="phpdox" depends="phpunit,phploc-ci,phpcs,phpmd-xml">
+        <exec
+                command="${exec.phpdox}"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+    </target>
+
+    <target name="all" depends="clean, build, report, ci-tasks"/>
+
+    <!-- Intedned for use by humans -->
+    <target name="build" depends="prepare, test"/>
+    <target name="test" depends="prepare, phpunit"/>
+    <target name="report" depends="build, phploc, phpdepend-human, phpcs, phpmd-html, phpcpd, phpdox"/>
+
+    <!-- Intended for use by Continuous Integration environments -->
+    <target name="ci" depends="clean, ci-tasks"/>
+    <target name="ci-tasks" depends="test, phploc-ci, phpdepend-ci, phpcs, phpmd-xml, phpcpd-ci, phpdox"/>
+</project>

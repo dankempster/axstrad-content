@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhingConfiguration">
+    <buildFilePaths>
+      <buildFile options="" path="file://$PROJECT_DIR$/build.xml">
+        <targetsToHide>
+          <target value="prepare" />
+          <target value="phpdepend-human" />
+          <target value="phpdepend-ci" />
+          <target value="phpcs" />
+          <target value="phpunit" />
+          <target value="phpmd-report" />
+          <target value="phpmd-html" />
+          <target value="phpmd-xml" />
+          <target value="phpcpd-ci" />
+          <target value="phploc-ci" />
+          <target value="ci-tasks" />
+        </targetsToHide>
+      </buildFile>
+    </buildFilePaths>
+    <phingPath>$USER_HOME$/.composer/vendor/bin/phing</phingPath>
+  </component>
+</project>
