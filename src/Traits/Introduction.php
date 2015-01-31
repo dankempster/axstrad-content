@@ -37,6 +37,7 @@ trait Introduction
     public function setIntroduction($introduction = null)
     {
         if ($introduction === null) {
+            /** @noinspection PhpUndefinedFieldInspection */
             $this->introduction = null;
         }
         elseif (!is_scalar($introduction)) {
@@ -46,6 +47,7 @@ trait Introduction
             );
         }
         else {
+            /** @noinspection PhpUndefinedFieldInspection */
             $this->introduction = (string) $introduction;
         }
         return $this;
@@ -58,6 +60,7 @@ trait Introduction
      */
     public function getIntroduction()
     {
+        /** @noinspection PhpUndefinedFieldInspection */
         return $this->introduction;
     }
 }

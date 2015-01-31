@@ -13,8 +13,6 @@
 
 namespace Axstrad\Component\Content\Traits;
 
-use Axstrad\Component\Content\Exception\InvalidArgumentException;
-
 /**
  * Axstrad\Bundle\ContentBundle\Traits\Introduction
  *
@@ -68,7 +66,9 @@ trait CopyBasedIntroduction
      */
     protected function truncateWords($copy, $ellipse)
     {
+        /** @noinspection PhpUndefinedFieldInspection */
         $words = explode(" ", trim($copy), $this->copyIntroWordCount + 1);
+        /** @noinspection PhpUndefinedFieldInspection */
         if (count($words) > $this->copyIntroWordCount) {
             array_pop($words);
             $intro = trim(implode(" ", $words)).$ellipse;

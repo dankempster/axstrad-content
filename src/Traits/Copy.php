@@ -37,6 +37,7 @@ trait Copy
     public function setCopy($copy = null)
     {
         if (is_null($copy)) {
+            /** @noinspection PhpUndefinedFieldInspection */
             $this->copy = null;
         }
         elseif (!is_scalar($copy)) {
@@ -46,6 +47,7 @@ trait Copy
             );
         }
         else {
+            /** @noinspection PhpUndefinedFieldInspection */
             $this->copy = (string) $copy;
         }
         return $this;
@@ -58,6 +60,7 @@ trait Copy
      */
     public function getCopy()
     {
+        /** @noinspection PhpUndefinedFieldInspection */
         return $this->copy;
     }
 }

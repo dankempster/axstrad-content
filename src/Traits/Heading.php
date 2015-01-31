@@ -34,6 +34,7 @@ trait Heading
      */
     public function setHeading($heading)
     {
+        /** @noinspection PhpUndefinedFieldInspection */
         $this->heading = (string) $heading;
         return $this;
     }
@@ -45,6 +46,7 @@ trait Heading
      */
     public function getHeading()
     {
+        /** @noinspection PhpUndefinedFieldInspection */
         return $this->heading;
     }
 }
