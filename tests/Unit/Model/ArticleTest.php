@@ -14,7 +14,6 @@
 namespace Axstrad\Component\Content\Tests\Unit\Model;
 
 use Axstrad\Component\Content\Model\Article;
-use Axstrad\Component\Test\TestCase;
 
 /**
  * Axstrad\Component\Content\Tests\Unit\Model\ArticleTest
@@ -25,7 +24,7 @@ use Axstrad\Component\Test\TestCase;
  * @subpackage Tests
  * @group unit
  */
-class ArticleTest extends TestCase
+class ArticleTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var Article

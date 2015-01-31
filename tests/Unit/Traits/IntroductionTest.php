@@ -15,7 +15,6 @@ namespace Axstrad\Component\Content\Tests\Unit\Traits;
 
 use Axstrad\Component\Content\Exception\InvalidArgumentException;
 use Axstrad\Component\Content\Tests\Stubs\Traits\IntroductionTraitStub;
-use Axstrad\Component\Test\TestCase;
 
 /**
  * Axstrad\Component\Content\Tests\Unit\Traits\IntroductionTest
@@ -26,7 +25,7 @@ use Axstrad\Component\Test\TestCase;
  * @subpackage Tests
  * @group unit
  */
-class IntroductionTest extends TestCase
+class IntroductionTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var IntroductionTraitStub

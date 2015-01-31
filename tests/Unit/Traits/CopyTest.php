@@ -15,7 +15,6 @@ namespace Axstrad\Component\Content\Tests\Unit\Traits;
 
 use Axstrad\Component\Content\Exception\InvalidArgumentException;
 use Axstrad\Component\Content\Tests\Stubs\Traits\CopyTraitStub;
-use Axstrad\Component\Test\TestCase;
 
 /**
  * Axstrad\Component\Content\Tests\Unit\Traits\CopyTest
@@ -26,7 +25,7 @@ use Axstrad\Component\Test\TestCase;
  * @subpackage Tests
  * @group unit
  */
-class CopyTest extends TestCase
+class CopyTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var CopyTraitStub
