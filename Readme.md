@@ -16,6 +16,7 @@ __namespace:__ Axstrad\Component\Content;
  - Various content related models & traits
     - Copy
     - Article
+    - Introduction
  - Provides ORM mapping using annotations on Entity/Traits 
 
 
