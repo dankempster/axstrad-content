@@ -29,5 +29,5 @@ use Doctrine\ORM\Mapping as ORM;
 class ArticleIntroduction extends Article implements
     Introduction
 {
-    use Traits\CopyBasedIntroductionTrait;
+    use CopyBasedIntroductionTrait;
 }

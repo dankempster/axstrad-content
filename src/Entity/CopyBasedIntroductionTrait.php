@@ -11,12 +11,12 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Entity\Traits;
+namespace Axstrad\Component\Content\Entity;
 
 use Axstrad\Component\Content\Traits\CopyBasedIntroduction;
 
 /**
- * Axstrad\Component\Content\Entity\Traits\CopyBasedIntroductionTrait
+ * Axstrad\Component\Content\Entity\CopyBasedIntroductionTrait
  *
  * Use requirements:
  *   - Doctrine\ORM\Mapping as ORM

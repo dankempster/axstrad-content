@@ -38,8 +38,8 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
             [new Model\CopyIntroduction],
 
             // Doctrine/ORM Traits
-            [$this->getMockForTrait('Axstrad\Component\Content\Entity\Traits\CopyTrait')],
-            [$this->getMockForTrait('Axstrad\Component\Content\Entity\Traits\CopyBasedIntroductionTrait')],
+            [$this->getMockForTrait('Axstrad\Component\Content\Entity\CopyTrait')],
+            [$this->getMockForTrait('Axstrad\Component\Content\Entity\CopyBasedIntroductionTrait')],
 
             // Doctrine/ORM
             [new Entity\Copy],

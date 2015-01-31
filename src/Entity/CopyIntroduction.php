@@ -28,7 +28,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class CopyIntroduction extends BaseCopyIntroduction
 {
-    use Traits\EntityTrait;
-    use Traits\CopyTrait;
-    use Traits\IntroductionTrait;
+    use EntityTrait;
+    use CopyTrait;
+    use IntroductionTrait;
 }

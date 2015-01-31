@@ -29,6 +29,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Copy implements
     CopyInterface
 {
-    use Traits\EntityTrait;
-    use Traits\CopyTrait;
+    use EntityTrait;
+    use CopyTrait;
 }

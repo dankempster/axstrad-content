@@ -11,10 +11,10 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Entity\Traits;
+namespace Axstrad\Component\Content\Entity;
 
 /**
- * Axstrad\Component\Content\Entity\Traits\EntityTrait
+ * Axstrad\Component\Content\Entity\EntityTrait
  *
  * Use requirements:
  *   - Doctrine\ORM\Mapping as ORM

@@ -11,24 +11,23 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Entity\Traits;
+namespace Axstrad\Component\Content\Entity;
 
-use Axstrad\Component\Content\Traits\Introduction;
+use Axstrad\Component\Content\Traits\Copy;
 
 /**
- * Axstrad\Component\Content\Entity\Traits\IntroductionTrait
+ * Axstrad\Component\Content\Entity\CopyTrait
  *
  * Use requirements:
  *   - Doctrine\ORM\Mapping as ORM
- *   - Doctrine\ORM\Mapping as ORM
  */
-trait IntroductionTrait
+trait CopyTrait
 {
-    use Introduction;
+    use Copy;
 
     /**
      * @ORM\Column(type="text", length=255, nullable=true)
      * @var null|string
      */
-    protected $introduction = null;
+    protected $copy = null;
 }
