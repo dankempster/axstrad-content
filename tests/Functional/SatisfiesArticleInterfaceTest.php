@@ -13,6 +13,7 @@
 
 namespace Axstrad\Component\Content\Tests\Functional;
 
+use Axstrad\Component\Content\Article;
 use Axstrad\Component\Content\Entity;
 use Axstrad\Component\Content\Model;
 
@@ -55,10 +56,11 @@ class SatisfiesArticleInterfaceTest extends SatisfiesCopyInterfaceTest
 
     /**
      * @dataProvider classNAmeProvider
+     * @param Article $fixture
      */
-    public function testImplementsIntroductionInterface($fixture)
+    public function testImplementsArticleInterface($fixture)
     {
-        return $this->assertTrue(
+        $this->assertTrue(
             is_a($fixture, 'Axstrad\Component\Content\Article', true),
             sprintf(
                 '%s doesn\'t implement the %s interface',
@@ -70,6 +72,7 @@ class SatisfiesArticleInterfaceTest extends SatisfiesCopyInterfaceTest
 
     /**
      * @dataProvider fixtureProvider
+     * @param Article $fixture
      */
     public function testCanSetHeading($fixture)
     {
@@ -82,6 +85,7 @@ class SatisfiesArticleInterfaceTest extends SatisfiesCopyInterfaceTest
 
     /**
      * @dataProvider fixtureProvider
+     * @param Article $fixture
      */
     public function testSetHeadingReturnsSelf($fixture)
     {
@@ -93,6 +97,7 @@ class SatisfiesArticleInterfaceTest extends SatisfiesCopyInterfaceTest
 
     /**
      * @dataProvider fixtureProvider
+     * @param Article $fixture
      */
     public function testHeadingIsTypeCastToString($fixture)
     {
@@ -105,6 +110,7 @@ class SatisfiesArticleInterfaceTest extends SatisfiesCopyInterfaceTest
 
     /**
      * @dataProvider fixtureProvider
+     * @param Article $fixture
      */
     public function testNullIsTypeCastToString($fixture)
     {

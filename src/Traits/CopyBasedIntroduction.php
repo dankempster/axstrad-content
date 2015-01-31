@@ -14,7 +14,7 @@
 namespace Axstrad\Component\Content\Traits;
 
 /**
- * Axstrad\Bundle\ContentBundle\Traits\Introduction
+ * Axstrad\Bundle\ContentBundle\Traits\CopyBasedIntroduction
  *
  * Property requirements
  *   - $copy = null

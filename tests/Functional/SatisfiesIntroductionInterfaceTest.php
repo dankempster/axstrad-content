@@ -14,6 +14,8 @@
 namespace Axstrad\Component\Content\Tests\Functional;
 
 use Axstrad\Component\Content\Entity;
+use Axstrad\Component\Content\Exception\InvalidArgumentException;
+use Axstrad\Component\Content\Introduction;
 use Axstrad\Component\Content\Model;
 use Axstrad\Component\Content\Tests\Stubs\Traits\CopyBasedIntroductionTraitStub;
 use Axstrad\Component\Content\Tests\Stubs\Traits\IntroductionTraitStub;
@@ -29,6 +31,9 @@ use Axstrad\Component\Content\Tests\Stubs\Traits\IntroductionTraitStub;
  */
 class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @return array
+     */
     public function fixtureProvider()
     {
         return array(
@@ -47,6 +52,9 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * @return array
+     */
     public function classNameProvider()
     {
         return array(
@@ -54,17 +62,17 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
             ['Axstrad\Component\Content\Model\ArticleIntroduction'],
 
             // Doctrine/ORM
-            ['Axstrad\Component\Content\Entity\CopyIntroduction'],
             ['Axstrad\Component\Content\Entity\ArticleIntroduction'],
         );
     }
 
     /**
      * @dataProvider classNAmeProvider
+     * @param Introduction $fixture
      */
     public function testImplementsIntroductionInterface($fixture)
     {
-        return $this->assertTrue(
+        $this->assertTrue(
             is_a($fixture, 'Axstrad\Component\Content\Introduction', true),
             sprintf(
                 '%s doesn\'t implement the %s interface',
@@ -76,6 +84,7 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider fixtureProvider
+     * @param Introduction $fixture
      */
     public function testIntroductionIsNullToStart($fixture)
     {
@@ -86,6 +95,7 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider fixtureProvider
+     * @param Introduction $fixture
      */
     public function testCanSetIntroduction($fixture)
     {
@@ -98,8 +108,9 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider fixtureProvider
+     * @param Introduction $fixture
      */
-    public function testsetIntroductionReturnsSelf($fixture)
+    public function testSetIntroductionReturnsSelf($fixture)
     {
         $this->assertSame(
             $fixture,
@@ -109,6 +120,7 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider fixtureProvider
+     * @param Introduction $fixture
      */
     public function testIntroductionIsTypeCastToString($fixture)
     {
@@ -121,6 +133,7 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider fixtureProvider
+     * @param Introduction $fixture
      */
     public function testIntroductionCanBeSetToNull($fixture)
     {
@@ -133,9 +146,10 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider fixtureProvider
-     * @expectedException Axstrad\Component\Content\Exception\InvalidArgumentException
+     * @expectedException InvalidArgumentException
+     * @param Introduction $fixture
      */
-    public function testsetIntroductionThrowsExceptionIfArgumentIsNotScalar($fixture)
+    public function testSetIntroductionThrowsExceptionIfArgumentIsNotScalar($fixture)
     {
         $fixture->setIntroduction($this);
     }

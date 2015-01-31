@@ -13,7 +13,9 @@
 
 namespace Axstrad\Component\Content\Tests\Functional;
 
+use Axstrad\Component\Content\Copy;
 use Axstrad\Component\Content\Entity;
+use Axstrad\Component\Content\Exception\InvalidArgumentException;
 use Axstrad\Component\Content\Model;
 use Axstrad\Component\Content\Tests\Stubs\Traits\CopyBasedIntroductionTraitStub;
 use Axstrad\Component\Content\Tests\Stubs\Traits\CopyTraitStub;
@@ -69,10 +71,11 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider classNameProvider
+     * @param Copy $fixture
      */
     public function testImplementsCopyInterface($fixture)
     {
-        return $this->assertTrue(
+        $this->assertTrue(
             is_a($fixture, 'Axstrad\Component\Content\Copy', true),
             sprintf(
                 '%s doesn\'t implement the %s interface',
@@ -84,6 +87,7 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider fixtureProvider
+     * @param Copy $fixture
      */
     public function testCopyIsNullToStart($fixture)
     {
@@ -93,6 +97,7 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
     }
     /**
      * @dataProvider fixtureProvider
+     * @param Copy $fixture
      */
     public function testCanSetCopy($fixture)
     {
@@ -105,6 +110,7 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider fixtureProvider
+     * @param Copy $fixture
      */
     public function testSetCopyReturnsSelf($fixture)
     {
@@ -116,6 +122,7 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider fixtureProvider
+     * @param Copy $fixture
      */
     public function testCopyIsTypeCastToString($fixture)
     {
@@ -128,6 +135,7 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider fixtureProvider
+     * @param Copy $fixture
      */
     public function testCopyCanBeSetToNull($fixture)
     {
@@ -139,8 +147,9 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Axstrad\Component\Content\Exception\InvalidArgumentException
+     * @expectedException InvalidArgumentException
      * @dataProvider fixtureProvider
+     * @param Copy $fixture
      */
     public function testSetCopyThrowsExceptionIfArgumentIsNotScalar($fixture)
     {

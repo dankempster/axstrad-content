@@ -13,6 +13,7 @@
 
 namespace Axstrad\Component\Content\Tests\Unit\Traits;
 
+use Axstrad\Component\Content\Exception\InvalidArgumentException;
 use Axstrad\Component\Content\Tests\Stubs\Traits\IntroductionTraitStub;
 use Axstrad\Component\Test\TestCase;
 
@@ -27,6 +28,11 @@ use Axstrad\Component\Test\TestCase;
  */
 class IntroductionTest extends TestCase
 {
+    /**
+     * @var IntroductionTraitStub
+     */
+    protected $fixture;
+
     public function setUp()
     {
         $this->fixture = new IntroductionTraitStub;
@@ -72,7 +78,7 @@ class IntroductionTest extends TestCase
     /**
      * @covers Axstrad\Component\Content\Traits\Introduction::setIntroduction
      */
-    public function testsetIntroductionReturnsSelf()
+    public function testSetIntroductionReturnsSelf()
     {
         $this->assertSame(
             $this->fixture,
@@ -110,10 +116,10 @@ class IntroductionTest extends TestCase
     }
 
     /**
-     * @expectedException Axstrad\Component\Content\Exception\InvalidArgumentException
+     * @expectedException InvalidArgumentException
      * @covers Axstrad\Component\Content\Traits\Introduction::setIntroduction
      */
-    public function testsetIntroductionThrowsExceptionIfArgumentIsNotScalar()
+    public function testSetIntroductionThrowsExceptionIfArgumentIsNotScalar()
     {
         $this->fixture->setIntroduction($this);
     }

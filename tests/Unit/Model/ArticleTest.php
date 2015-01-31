@@ -27,6 +27,11 @@ use Axstrad\Component\Test\TestCase;
  */
 class ArticleTest extends TestCase
 {
+    /**
+     * @var Article
+     */
+    protected $fixture;
+
     public function setUp()
     {
         $this->fixture = new Article;
