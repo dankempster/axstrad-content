@@ -2,8 +2,6 @@
 
 namespace Axstrad\Component\Content\Entity\Traits;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Axstrad\Component\Content\Entity\Traits\EntityTrait
  *

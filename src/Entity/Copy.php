@@ -13,8 +13,8 @@
 
 namespace Axstrad\Component\Content\Entity;
 
-use Axstrad\Component\Content\Model\Copy as BaseCopy;
 use Doctrine\ORM\Mapping as ORM;
+use Axstrad\Component\Content\Copy as CopyInterface;
 
 /**
  * Axstrad\Component\Content\Entity\Copy
@@ -25,7 +25,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @subpackage ORM
  * @since 0.3
  */
-class Copy extends BaseCopy
+class Copy implements
+    CopyInterface
 {
     use Traits\EntityTrait;
     use Traits\CopyTrait;

@@ -2,6 +2,8 @@
 
 namespace Axstrad\Component\Content\Entity\Traits;
 
+use Axstrad\Component\Content\Traits\Copy;
+
 /**
  * Axstrad\Component\Content\Entity\Traits\CopyTrait
  *
@@ -10,6 +12,8 @@ namespace Axstrad\Component\Content\Entity\Traits;
  */
 trait CopyTrait
 {
+    use Copy;
+
     /**
      * @ORM\Column(type="text", length=255, nullable=true)
      * @var null|string

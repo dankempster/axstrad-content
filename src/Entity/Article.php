@@ -13,8 +13,8 @@
 
 namespace Axstrad\Component\Content\Entity;
 
-use Axstrad\Component\Content\Model\Article as BaseArticle;
 use Doctrine\ORM\Mapping as ORM;
+use Axstrad\Component\Content\Article as ArticleInterface;
 
 /**
  * Axstrad\Component\Content\Entity\Article
@@ -25,7 +25,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @subpackage ORM
  * @since 0.3
  */
-class Article extends BaseArticle
+class Article implements
+    ArticleInterface
 {
     use Traits\EntityTrait;
     use Traits\CopyTrait;

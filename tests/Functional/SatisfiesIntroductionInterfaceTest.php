@@ -35,6 +35,10 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
             [new Model\ArticleIntroduction],
             [new Model\CopyIntroduction],
 
+            // Doctrine/ORM Traits
+            [$this->getMockForTrait('Axstrad\Component\Content\Entity\Traits\IntroductionTrait')],
+            [$this->getMockForTrait('Axstrad\Component\Content\Entity\Traits\CopyBasedIntroductionTrait')],
+
             // Doctrine/ORM
             [new Entity\ArticleIntroduction],
             [new Entity\CopyIntroduction],

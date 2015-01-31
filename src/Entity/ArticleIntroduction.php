@@ -13,7 +13,7 @@
 
 namespace Axstrad\Component\Content\Entity;
 
-use Axstrad\Component\Content\Model\ArticleIntroduction as BaseArticle;
+use Axstrad\Component\Content\Introduction;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,10 +25,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @subpackage ORM
  * @since 0.3
  */
-class ArticleIntroduction extends BaseArticle
+class ArticleIntroduction extends Article implements
+    Introduction
 {
-    use Traits\EntityTrait;
-    use Traits\CopyTrait;
-    use Traits\HeadingTrait;
-    use Traits\IntroductionTrait;
+    use Traits\CopyBasedIntroductionTrait;
 }

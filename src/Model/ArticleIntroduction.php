@@ -13,7 +13,7 @@
 
 namespace Axstrad\Component\Content\Model;
 
-use Axstrad\Component\Content\Article as ArticleInterface;
+use Axstrad\Component\Content\Introduction;
 use Axstrad\Component\Content\Traits;
 
 /**
@@ -24,15 +24,25 @@ use Axstrad\Component\Content\Traits;
  * @package Axstrad/Content
  * @since 0.3
  */
-class ArticleIntroduction extends CopyIntroduction implements
-    ArticleInterface
+class ArticleIntroduction extends Article implements
+    Introduction
 {
     use Traits\Heading;
+    use Traits\CopyBasedIntroduction;
 
     /**
-     * Required by Traits\Heading
+     * Require by Traits\Introduction
      *
-     * @var string The article's heading
+     * @var null|string The article introduction
      */
-    protected $heading = "";
+    protected $introduction = null;
+
+    /**
+     * Require by Traits\Introduction
+     *
+     * @var integer $copyIntroWordCount When an introduction is not set, this is
+     *      the number of words to trim {@see getCopy copy} to, to create the
+     *      introduction.
+     */
+    protected $copyIntroWordCount = 30;
 }
