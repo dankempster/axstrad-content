@@ -15,6 +15,8 @@ namespace Axstrad\Component\Content\Tests\Functional;
 
 use Axstrad\Component\Content\Entity;
 use Axstrad\Component\Content\Model;
+use Axstrad\Component\Content\Tests\Stubs\Traits\CopyBasedIntroductionTraitStub;
+use Axstrad\Component\Content\Tests\Stubs\Traits\CopyTraitStub;
 
 /**
  * Axstrad\Component\Content\Tests\Functional\SatisfiesCopyInterfaceTest
@@ -31,6 +33,10 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
     {
         return array(
 
+            // Traits
+            [new CopyTraitStub()],
+            [new CopyBasedIntroductionTraitStub()],
+
             // Model
             [new Model\Article],
             [new Model\ArticleIntroduction],
@@ -42,6 +48,8 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
 
             // Doctrine/ORM
             [new Entity\Copy],
+            [new Entity\ArticleIntroduction()],
+            [new Entity\Article()],
         );
     }
 
@@ -50,9 +58,12 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
         return array(
             // Model
             ['Axstrad\Component\Content\Model\Copy'],
+            ['Axstrad\Component\Content\Model\Article'],
 
             // Doctrine/ORM
             ['Axstrad\Component\Content\Entity\Copy'],
+            ['Axstrad\Component\Content\Entity\Article'],
+            ['Axstrad\Component\Content\Entity\ArticleIntroduction'],
         );
     }
 

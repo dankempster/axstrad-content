@@ -15,6 +15,8 @@ namespace Axstrad\Component\Content\Tests\Functional;
 
 use Axstrad\Component\Content\Entity;
 use Axstrad\Component\Content\Model;
+use Axstrad\Component\Content\Tests\Stubs\Traits\CopyBasedIntroductionTraitStub;
+use Axstrad\Component\Content\Tests\Stubs\Traits\IntroductionTraitStub;
 
 /**
  * Axstrad\Component\Content\Tests\Functional\SatisfiesIntroductionInterfaceTest
@@ -31,15 +33,17 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
     {
         return array(
 
+            // Traits
+            [new IntroductionTraitStub()],
+            [new CopyBasedIntroductionTraitStub()],
+
             // Model
             [new Model\ArticleIntroduction],
 
-            // Doctrine/ORM Traits
-            [$this->getMockForTrait('Axstrad\Component\Content\Entity\IntroductionTrait')],
-            [$this->getMockForTrait('Axstrad\Component\Content\Entity\CopyBasedIntroductionTrait')],
-
             // Doctrine/ORM
             [new Entity\ArticleIntroduction],
+            [$this->getMockForTrait('Axstrad\Component\Content\Entity\IntroductionTrait')],
+            [$this->getMockForTrait('Axstrad\Component\Content\Entity\CopyBasedIntroductionTrait')],
         );
     }
 
