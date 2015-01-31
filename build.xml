@@ -143,6 +143,29 @@
                 />
     </target>
 
+    <target name="phpformatter">
+        <exec
+                command="${exec.phpformatter} formatter:header:fix ${project.src}"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+        <exec
+                command="${exec.phpformatter} formatter:header:fix ${project.tests}"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+        <exec
+                command="${exec.phpformatter} formatter:use:sort ${project.src}"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+        <exec
+                command="${exec.phpformatter} formatter:use:sort ${project.tests}"
+                dir="${project.basedir}"
+                passthru="true"
+                />
+    </target>
+
     <target name="all" depends="clean, build, report, ci-tasks"/>
 
     <!-- Intedned for use by humans -->
