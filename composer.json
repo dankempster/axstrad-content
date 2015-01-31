@@ -14,7 +14,7 @@
 
     "require": {
         "php": ">=5.4",
-        "axstrad/common": "~0.1.0",
+        "axstrad/common": "dev-develop",
         "doctrine/orm": "~2.3"
     },
 
