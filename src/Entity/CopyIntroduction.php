@@ -24,6 +24,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @package Axstrad/Content
  * @subpackage ORM
  * @since 0.3
+ * @ORM\MappedSuperclass
  */
 class CopyIntroduction extends BaseCopyIntroduction
 {
