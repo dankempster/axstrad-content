@@ -34,7 +34,7 @@ class CopyIntroduction extends Copy implements
     /**
      * Require by Traits\Introduction
      *
-     * @var null|string The article instroduction
+     * @var null|string The article introduction
      */
     protected $introduction = null;
 
