@@ -35,7 +35,6 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
             [new Model\Article],
             [new Model\ArticleIntroduction],
             [new Model\Copy],
-            [new Model\CopyIntroduction],
 
             // Doctrine/ORM Traits
             [$this->getMockForTrait('Axstrad\Component\Content\Entity\CopyTrait')],
@@ -43,7 +42,6 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
 
             // Doctrine/ORM
             [new Entity\Copy],
-            [new Entity\CopyIntroduction],
         );
     }
 
@@ -55,7 +53,6 @@ class SatisfiesCopyInterfaceTest extends \PHPUnit_Framework_TestCase
 
             // Doctrine/ORM
             ['Axstrad\Component\Content\Entity\Copy'],
-            ['Axstrad\Component\Content\Entity\CopyIntroduction'],
         );
     }
 

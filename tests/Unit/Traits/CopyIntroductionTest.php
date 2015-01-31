@@ -11,10 +11,10 @@
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
 
-namespace Axstrad\Component\Content\Tests\Unit\Model;
+namespace Axstrad\Component\Content\Tests\Unit\Traits;
 
-use Axstrad\Component\Content\Model\CopyIntroduction;
-use Axstrad\Component\Test\TestCase;
+use Axstrad\Component\Content\Tests\Stubs\Traits\CopyBasedIntroductionTraitStub;
+use Axstrad\Component\Content\Traits\CopyBasedIntroduction;
 
 /**
  * Axstrad\Component\Content\Tests\Unit\Model\CopyIntroductionTest
@@ -25,11 +25,19 @@ use Axstrad\Component\Test\TestCase;
  * @subpackage Tests
  * @group unit
  */
-class CopyIntroductionTest extends TestCase
+class CopyIntroductionTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var CopyBasedIntroduction
+     */
+    protected $fixture;
+
+    /**
+     * @return void
+     */
     public function setUp()
     {
-        $this->fixture = new CopyIntroduction;
+        $this->fixture = new CopyBasedIntroductionTraitStub;
     }
 
     public function testCopyIsUsedWhenIntroIsNotSet()

@@ -33,7 +33,6 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
 
             // Model
             [new Model\ArticleIntroduction],
-            [new Model\CopyIntroduction],
 
             // Doctrine/ORM Traits
             [$this->getMockForTrait('Axstrad\Component\Content\Entity\IntroductionTrait')],
@@ -41,7 +40,6 @@ class SatisfiesIntroductionInterfaceTest extends \PHPUnit_Framework_TestCase
 
             // Doctrine/ORM
             [new Entity\ArticleIntroduction],
-            [new Entity\CopyIntroduction],
         );
     }
 
