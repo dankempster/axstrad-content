@@ -26,7 +26,7 @@ trait CopyTrait
     use Copy;
 
     /**
-     * @ORM\Column(type="text", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      * @var null|string
      */
     protected $copy = null;
