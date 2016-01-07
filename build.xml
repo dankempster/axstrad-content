@@ -36,6 +36,10 @@
             depends="composer,prepare,static-analysis,phpunit,phpdox,-check-failure"
             description="Performs static analysis, runs the tests, and generates project documentation"/>
 
+    <target name="no-dox-build"
+            depends="composer,prepare,static-analysis,phpunit,-check-failure"
+            description="Performs static analysis, runs the tests, and generates project documentation"/>
+
     <target name="symfony-build"
             depends="require-symfony,prepare,static-analysis,phpunit,-check-failure"
             description="Performs static analysis, runs the tests, and generates project documentation"/>
