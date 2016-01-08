@@ -200,7 +200,7 @@
         <exec executable="${phpmd}" taskname="phpmd">
             <arg path="${basedir}" />
             <arg value="text" />
-            <arg path="${basedir}/build/phpmd.xml" />
+            <arg path="${basedir}/build/config/phpmd.xml" />
             <arg value="--exclude" />
             <arg value="vendor,build" />
         </exec>
@@ -215,7 +215,7 @@
         <exec executable="${phpmd}" taskname="phpmd">
             <arg path="${basedir}" />
             <arg value="xml" />
-            <arg path="${basedir}/build/phpmd.xml" />
+            <arg path="${basedir}/build/config/phpmd.xml" />
             <arg value="--reportfile" />
             <arg path="${basedir}/build/logs/pmd.xml" />
             <arg value="--exclude" />
