@@ -5,5 +5,5 @@ composer.lock
 # Build Artifacts
 cache.properties
 build/
-!build/php*.xml
+!build/config/php*.xml
 
