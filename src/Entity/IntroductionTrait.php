@@ -21,6 +21,8 @@ use Axstrad\Component\Content\Traits\Introduction;
  * Use requirements:
  *   - Doctrine\ORM\Mapping as ORM
  *   - Doctrine\ORM\Mapping as ORM
+ *
+ * @deprecated Will be removed in version 1.0
  */
 trait IntroductionTrait
 {

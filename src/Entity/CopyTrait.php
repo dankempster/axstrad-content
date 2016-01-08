@@ -20,6 +20,8 @@ use Axstrad\Component\Content\Traits\Copy;
  *
  * Use requirements:
  *   - Doctrine\ORM\Mapping as ORM
+ *
+ * @deprecated Will be removed in version 1.0
  */
 trait CopyTrait
 {
