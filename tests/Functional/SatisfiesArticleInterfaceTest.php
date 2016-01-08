@@ -47,6 +47,7 @@ class SatisfiesArticleInterfaceTest extends SatisfiesCopyInterfaceTest
         return array(
             // Model
             ['Axstrad\Component\Content\Model\Article'],
+            ['Axstrad\Component\Content\Model\ArticleIntroduction'],
 
             // Doctrine/ORM
             ['Axstrad\Component\Content\Entity\Article'],
